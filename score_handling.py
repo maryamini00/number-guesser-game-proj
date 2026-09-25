@@ -12,9 +12,11 @@ def decrease_score(s):
             return s-1
     elif s == 1:
         print("you lost \nI hope you win next time :)")
+        return 0
         exit_program()
     else:
         print("erorr...")
+        return 0
         exit_program()
 def increase_score(s):
     print("excelent \nthat was right :) \n")
