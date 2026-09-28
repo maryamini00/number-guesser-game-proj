@@ -17,7 +17,7 @@ while score > 0:
     print("\n-------------------------\n")
     print("If you want to play, type play, 'P', or 'p'")
     print("If you want to exit the program, type exit, 'E', or 'e'\n")
-    start_input()
+    start_input(score)
     print("-------------------------")
     print("|                        |")
     print("|    The Game Started    |")
@@ -26,7 +26,7 @@ while score > 0:
     print("-------------------------")
     check = True
     while check:
-        new_num = validate_type_input()
+        new_num = validate_type_input(score)
         if new_num > selected_number:
             if last_num == -1:
                 print("\nno, that wasn't right")
@@ -38,7 +38,10 @@ while score > 0:
                 last_num = new_num
             elif new_num > last_num:
                 print("\nno, that wasn't right")
-                print("hint: \nchoose a smaller number")
+                if last_num > selected_number: 
+                    print("i told you choose a smaller number than ", last_num)
+                else:
+                    print("hint: \nchoose a smaller number")
                 print("try again :)\n")
                 score = sh.decrease_score(score)
                 sh.print_score(score)
@@ -49,8 +52,6 @@ while score > 0:
                 print("but it was good continue, you can find it")
                 print("hint: \nchoose a smaller number")
                 print("try again :)\n")
-                score = sh.decrease_score(score)
-                sh.print_score(score)
                 score = sh.decrease_score(score)
                 sh.print_score(score)
                 print("-------------------------")
@@ -81,7 +82,10 @@ while score > 0:
                 last_num = new_num
             elif last_num > new_num:
                 print("\nno, that wasn't right")
-                print("hint: \nchoose a larger number")
+                if  selected_number > last_num:
+                    print("i told you choose a larger number than ", last_num)
+                else:
+                    print("hint: \nchoose a larger number")
                 print("try again :)\n")
                 score = sh.decrease_score(score)
                 sh.print_score(score)
@@ -102,8 +106,3 @@ while score > 0:
             score = sh.increase_score(score)
             sh.print_score(score)
             check = False
-        
-
-
-
-#Checking the last digit against the selected digit.
