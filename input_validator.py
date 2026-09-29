@@ -1,5 +1,5 @@
 def take_input():
-    i = input("\nyour input (it has to be between 0 and 100): ")
+    i = input("\nyour input (it has to be between 1 and 100): ")
     return i
 def exit_program(s):
     print("Well, well...\nyour latest score was ", s ," :)")
@@ -8,8 +8,7 @@ def exit_program(s):
     print("\nexiting the program...")
     exit()
 def validate_type_input(s):
-    check = True
-    while check:
+    while True:
         i = take_input()
         if isinstance(i, int):
             return validate_range_input(i)
@@ -26,8 +25,7 @@ def validate_type_input(s):
         else:
             print("what was that? Please enter a number :) \ntry again...")
 def validate_range_input(i):
-    check = True
-    while check:
+    while True:
         if i < 1:
             print("oh i said input a number between 1 and 100, it's less than 1 :( \ntry again...")
             i = validate_type_input()
@@ -36,16 +34,15 @@ def validate_range_input(i):
             i = validate_type_input()
         else:
             #corrct ans
-            check = False
+            break
     return i
 def start_input(s):
-    check = True
-    while check:
+    while True:
         i = input("\nyour input: ")
         if i == "E" or i == "e" or i == "Exit" or i == "exit":
             exit_program(s)
         elif i == "P" or i == "p" or i == "Play" or i == "play":
-            check = False
+            break
         else:
             print("this input is invalid")
             print("try again :)")

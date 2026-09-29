@@ -24,8 +24,7 @@ while score > 0:
     print("|      let's go! :)      |")
     print("|                        |")
     print("-------------------------")
-    check = True
-    while check:
+    while True:
         new_num = validate_type_input(score)
         if new_num > selected_number:
             if last_num == -1:
@@ -105,4 +104,4 @@ while score > 0:
             print("you found it :)")
             score = sh.increase_score(score)
             sh.print_score(score)
-            check = False
+            break
