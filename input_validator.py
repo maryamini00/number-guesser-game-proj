@@ -28,11 +28,11 @@ def validate_type_input(s):
 def validate_range_input(i):
     check = True
     while check:
-        if i < 0:
-            print("oh i said input a number between 0 and 100, it's less than 0 :( \ntry again...")
+        if i < 1:
+            print("oh i said input a number between 1 and 100, it's less than 1 :( \ntry again...")
             i = validate_type_input()
         elif i > 100:
-            print("oh i said input a number between 0 and 100, it's less than 0 :( \ntry again...")
+            print("oh i said input a number between 1 and 100, it's less than 1 :( \ntry again...")
             i = validate_type_input()
         else:
             #corrct ans
