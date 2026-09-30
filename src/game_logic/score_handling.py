@@ -1,4 +1,4 @@
-from input_validator import exit_program
+from utils.input_validator import exit_program
 def first_score_print():
     print("your first score: 100 :)")
     print("1 point is deducted from your score for every incorrect guess, \nand you earn 5 points for every correct guess \n(correct guess means the exact number selected by the computer).")
